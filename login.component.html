@@ -1,0 +1,56 @@
+<section class=" text-center text-lg-start">
+<div class="container">
+  <div class="row">
+      <a class="btn btn-primary" routerLink="/practice">Practice</a>
+  </div>
+  <div class="card mt-3 pt-3">
+    <div class="row g-0 d-flex align-items-center">
+      <div class="col-md-12 text-center mt-4 pt-4">
+        <h1>Login Form</h1>
+      </div>
+      <div class="col-lg-4 d-none d-lg-flex pl-5 ml-5">
+        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes"
+          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+
+          <form method="post"  form="ngForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="username" formControlName="email" class="form-control" placeholder="Email Address" required>
+              <small class="text-danger" *ngIf="f['email'].touched && f['email'].errors">
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">Username is required.</div>
+              </small>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password" required>
+              <small class="text-danger" *ngIf="f['password'].touched && f['password'].errors">
+                <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+              </small>
+            </div>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+              <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+              </div>
+
+              <div class="col">
+                <!-- Simple link -->
+                <!-- <a href="#!">Forgot password?</a> -->
+              </div>
+            </div>
+
+            <!-- Submit button -->
+            <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
